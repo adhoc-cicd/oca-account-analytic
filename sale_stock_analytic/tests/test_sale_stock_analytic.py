@@ -22,7 +22,6 @@ class TestSaleStockAnalytic(SavepointCase):
         cls.sale_order = cls.sale_order_model.create(
             {
                 "partner_id": cls.partner.id,
-                "analytic_distribution": cls.analytic_distribution,
             }
         )
         cls.sale_order_line = cls.sale_order_line_model.create(
@@ -30,6 +29,7 @@ class TestSaleStockAnalytic(SavepointCase):
                 "name": "sale order line test",
                 "order_id": cls.sale_order.id,
                 "product_id": cls.product.id,
+                "analytic_distribution": cls.analytic_distribution,
             }
         )
 

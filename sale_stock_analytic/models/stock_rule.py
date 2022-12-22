@@ -33,7 +33,7 @@ class StockRule(models.Model):
         if sol_id:
             sol_model = self.env["sale.order.line"]
             sol = sol_model.browse(sol_id)
-            analytic_distribution = sol.order_id.analytic_distribution
+            analytic_distribution = sol.analytic_distribution
             if analytic_distribution:
                 move_values.update({"analytic_distribution": analytic_distribution})
         return move_values
